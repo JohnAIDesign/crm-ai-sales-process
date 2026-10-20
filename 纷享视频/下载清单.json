@@ -1,0 +1,251 @@
+{
+  "download_date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "method": "公开页面加载的 HLS 视频流，原编码合并为 MP4",
+  "verification": "ffprobe 容器、时长及音视频轨道检查；末尾视频帧解码检查；非全片逐帧检查",
+  "total_files": 12,
+  "total_bytes": 193693717,
+  "total_seconds": 1002.11,
+  "files": [
+    {
+      "file": "00_纷享销客Agentic_CRM总介绍.mp4",
+      "source_label": "总页面链接",
+      "source_page": "https://fs80.cn/bzusa0",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/b6fb3a5e5001834821585370634/video_1491444_2.m3u8",
+      "duration_seconds": 164.22,
+      "size_bytes": 54475005,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "f4eb5c9da4181b9c32bfab4b7d2ecb2dc3ba374aea96f6c4e9c6e2fb74c5020a",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "01_AI销售记录.mp4",
+      "source_label": "AI 销售记录",
+      "source_page": "https://fs80.cn/cf9r2j",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/5772c5a25001834821332927559/video_1491444_2.m3u8",
+      "duration_seconds": 77.65,
+      "size_bytes": 12862652,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "7d975180b218ebb4ae9dad99a27262cfacfc99801245bf5f987ce0c1104da1f6",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "02_销售周日报.mp4",
+      "source_label": "销售周/日报",
+      "source_page": "https://fs80.cn/5skz5m",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/050b7cb65001834820141725482/video_1491444_2.m3u8",
+      "duration_seconds": 82.85,
+      "size_bytes": 13673935,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "b301b72545b544dfc0c4895644a03820ef424c81c838e47c66770ab7cc9d8237",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "03_客户会议管理.mp4",
+      "source_label": "客户会议管理",
+      "source_page": "https://fs80.cn/462gjv",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/51024f3c5001834817313355725/video_1491444_2.m3u8",
+      "duration_seconds": 134.29,
+      "size_bytes": 25777182,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "a35dddcaec304c0d46ee6af77f998f59fa7f43f3f910c760dfdfc370b5889c87",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "04_线索转化教练.mp4",
+      "source_label": "线索转化教练",
+      "source_page": "https://fs80.cn/hqtvns",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/3dc7d3215001834819119329336/video_1491444_2.m3u8",
+      "duration_seconds": 62.15,
+      "size_bytes": 9415450,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "2238284eafa05bf02b47700bcac066a6202c4a848f488c35abe4751b1e6f775f",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "05_客户情报尽调.mp4",
+      "source_label": "客户情报尽调",
+      "source_page": "https://fs80.cn/bvseqf",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/6d7f83405001834818225618922/video_1491444_2.m3u8",
+      "duration_seconds": 87.39,
+      "size_bytes": 14501729,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "f4534fe55c945f3ea4783a75e08f1e6e7d7bd6fc24d1db5852f393261f694dd2",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "06_客户经营教练.mp4",
+      "source_label": "客户经营教练",
+      "source_page": "https://fs80.cn/r1zydl",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/aa52fe375001834815905022337/video_1491444_2.m3u8",
+      "duration_seconds": 77.49,
+      "size_bytes": 17464416,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "e01218e3ae1e3c29d9a6b20df91f6a193ba8a18854dc3a3b8cb61657540b3054",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "07_高层陪访简报.mp4",
+      "source_label": "高层陪访简报",
+      "source_page": "https://fs80.cn/z74ee6",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/b64703135001834814797779815/video_1491444_2.m3u8",
+      "duration_seconds": 58.85,
+      "size_bytes": 8612994,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "048cec1c0131e235e9f78d1d9a5e0583e2e1f945e63756a3c69c0afa82991045",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "08_见客前简报.mp4",
+      "source_label": "见客前简报",
+      "source_page": "https://fs80.cn/iei0xu",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/76347cc65001834814793207748/video_1491444_2.m3u8",
+      "duration_seconds": 59.72,
+      "size_bytes": 9508463,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "948194a935ef38618e09d3cc7564185e158b28b69c2367d8b64ceb228f09e7f8",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "09_商机赢单教练.mp4",
+      "source_label": "商机赢单教练",
+      "source_page": "https://fs80.cn/v2tkrh",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/87ed2f285001834820873281797/video_1491444_2.m3u8",
+      "duration_seconds": 74.19,
+      "size_bytes": 12822933,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "4a35df32e54969912f856b0df1761a5b670535c7f489a3ed52a935257228a27d",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "10_智能下单.mp4",
+      "source_label": "智能下单",
+      "source_page": "https://fs80.cn/yqf2jn",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/bdfbc3405001834816977004372/video_1491444_2.m3u8",
+      "duration_seconds": 56.52,
+      "size_bytes": 7050955,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "33ab47db22ac96cdb32a27c8f0c4033a897fb436a564a6fe8c1c36c447aa3150",
+      "end_frame_decode": "passed"
+    },
+    {
+      "file": "11_智能报价.mp4",
+      "source_label": "智能报价",
+      "source_page": "https://fs80.cn/oeqtg0",
+      "media_url": "https://1400150829.vod2.myqcloud.com/3fff7b05vodtransgzp1400150829/acdd656d5001834816987148780/video_1491444_2.m3u8",
+      "duration_seconds": 66.79,
+      "size_bytes": 7528003,
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "sha256": "e71d2cc91fdb93069bba7cd956d3804bbeaac6b00d4f48697a84fde7f6fee03f",
+      "end_frame_decode": "passed"
+    }
+  ]
+}

@@ -8,6 +8,12 @@
 
 由 GitHub Pages 托管，根目录 `index.html` 是主页入口。
 
+## 销售易资料
+
+[打开销售易销售过程管理与 AI 工具](https://johnaidesign.github.io/crm-ai-sales-process/sales-easy/)
+
+依据 62 页 NeoAgent2.0 手册，梳理管理方法、AI 工具及待验证部分，附 22 张原页证据和完整 PDF。
+
 ## 离线查看
 
 下载本目录后，用浏览器打开 `index.html`。HTML、`纷享视频`、`网页素材` 需保持相对位置。也可由支持视频 Range 请求的静态站点托管。

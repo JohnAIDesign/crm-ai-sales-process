@@ -2,7 +2,13 @@
 
 基于 12 段厂商演示，沿线索筛选、客户研究、拜访准备、沟通沉淀、商机推进、报价下单和复盘经营梳理 AI 的作用。
 
-## 查看
+## 在线主页
+
+[打开 AI 销售全过程主页](https://johnaidesign.github.io/crm-ai-sales-process/)
+
+由 GitHub Pages 托管，根目录 `index.html` 是主页入口。
+
+## 离线查看
 
 下载本目录后，用浏览器打开 `index.html`。HTML、`纷享视频`、`网页素材` 需保持相对位置。也可由支持视频 Range 请求的静态站点托管。
 

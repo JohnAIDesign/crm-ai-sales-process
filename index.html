@@ -35,6 +35,9 @@ const fmt=n=>`${Math.floor(n/60).toString().padStart(2,'0')}:${Math.floor(n%60).
 const byId=id=>DATA.videos.find(v=>v.id===Number(id));
 let activeStage=1,activeVideo=4;
 const player=$('player');
+const ONLINE=location.protocol==='https:'||location.protocol==='http:';
+const IDLE=ONLINE?'视频从本站加载，首次播放可能需要稍等片刻。':'视频来自本地资料，不需要联网。';
+const PLAY_LABEL=ONLINE?'▶ 播放视频':'▶ 播放本地视频';
 const TOOL_ROWS=[
  {name:'语音转写与信息抽取',use:'将客户沟通变为文字，整理需求、异议、时间、角色和下一步动作，降低补录成本。',level:'结果可见',note:'可见实时转写、模板化摘要和智能填单；ASR 供应商、专业词表与说话人识别方案未确认。',video:1,time:21},
  {name:'CRM 业务数据工具',use:'读取客户、联系人、商机、记录、价格等信息，为诊断提供上下文，并连接业务表单。',level:'调用可见',note:'尽调证据表可见 sharecrm data record query-by-nav；下单演示可见订单表单。接口范围与写入权限待核实。',video:5,time:76},
@@ -62,15 +65,15 @@ function selectVideo(id,options={}){
  const v=byId(id); if(!v)return;
  player.pause(); if(v.stage)activeStage=v.stage; activeVideo=v.id;
  renderStageNav();renderSidebar();renderAnalysis(v);
- player.poster=v.poster;player.src=v.file;player.setAttribute('aria-label',v.title+'，本地演示视频');player.load();
+ player.poster=v.poster;player.src=v.file;player.setAttribute('aria-label',v.title+'，演示视频');player.load();
  $('video-title').textContent=v.title;$('video-duration').textContent=fmt(v.duration);
  $('download').href=v.file;$('source').href=v.source;
  $('markers').innerHTML=v.marks.map(([t,label,desc])=>`<button type="button" class="marker" data-seek="${t}" title="${esc(desc)}"><div><span>${fmt(t)}</span>${esc(label)}</div><i aria-hidden="true">↗</i></button>`).join('');
- $('play-status').textContent='视频来自本地资料，不需要联网。';$('play').textContent='▶ 播放本地视频';
+ $('play-status').textContent=IDLE;$('play').textContent=PLAY_LABEL;
  if(options.scroll)$('flow').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
  if(options.time!==undefined)seekAndPlay(options.time);else if(options.play)playVideo();
 }
-function playVideo(){const promise=player.play();if(promise)promise.catch(()=>{$('play-status').textContent='请点击播放器的播放键；若文件未找到，请检查 HTML 与视频文件夹是否位于同一目录。';});}
+function playVideo(){const promise=player.play();if(promise)promise.catch(()=>{$('play-status').textContent=ONLINE?'请点击播放器的播放键；若加载较慢，请稍后重试。':'请点击播放器的播放键；若文件未找到，请检查 HTML 与视频文件夹是否位于同一目录。';});}
 function seekAndPlay(time){const go=()=>{player.currentTime=Math.min(time,player.duration||time);playVideo();};if(player.readyState>=1)go();else player.addEventListener('loadedmetadata',go,{once:true});}
 function renderTools(){
  $('tool-rows').innerHTML=TOOL_ROWS.map(r=>`<tr><td>${esc(r.name)}</td><td>${esc(r.use)}</td><td><span class="evidence ${r.level==='结果可见'?'result':''}">${r.level}</span>${esc(r.note)}</td><td><button type="button" class="watch-link" data-watch="${r.video}" data-time="${r.time}">${esc(byId(r.video).title)}<br>${fmt(r.time)} ↗</button></td></tr>`).join('');
@@ -79,7 +82,7 @@ function renderLibrary(){
  const q=$('search').value.trim().toLowerCase(),filter=$('stage-filter').value;
  const videos=DATA.videos.filter(v=>(filter==='all'||String(v.stage)===filter)&&JSON.stringify(v).toLowerCase().includes(q));
  $('video-grid').innerHTML=videos.map(v=>`<article class="video-card"><button class="thumb" type="button" data-watch="${v.id}" aria-label="播放 ${esc(v.title)}"><img src="${esc(v.poster)}" alt="${esc(v.title)}演示画面" loading="lazy"><span class="thumb-play" aria-hidden="true">▶</span><span class="duration">${fmt(v.duration)}</span></button><div class="card-copy"><div class="card-stage">${v.stage?'0'+v.stage+' / '+esc(DATA.stages.find(s=>s.id===v.stage).name):'全局概览'}</div><h3>${esc(v.title)}</h3><p>${esc(v.intro)}</p><div class="print-detail"><p><strong>AI：</strong>${v.ai.map(esc).join('；')}</p><p><strong>工具：</strong>${v.tools.map(esc).join(' → ')}</p><p><strong>待验证：</strong>${esc(v.unknown)}</p><p>来源：${esc(v.source)}</p></div><button class="watch-link" type="button" data-watch="${v.id}">查看分析并播放 →</button></div></article>`).join('');
- $('no-results').style.display=videos.length?'none':'block';$('library-count').textContent=videos.length===12?'总介绍与 11 个场景，全部可在本地播放。':`找到 ${videos.length} 段匹配视频，共 12 段。`;
+ $('no-results').style.display=videos.length?'none':'block';$('library-count').textContent=videos.length===12?(ONLINE?'总介绍与 11 个场景，全部可在线播放。':'总介绍与 11 个场景，全部可在本地播放。'):`找到 ${videos.length} 段匹配视频，共 12 段。`;
 }
 document.addEventListener('click',event=>{
  const stage=event.target.closest('[data-stage]');if(stage){activeStage=Number(stage.dataset.stage);selectVideo(DATA.stages.find(s=>s.id===activeStage).videos[0]);return;}
@@ -91,7 +94,7 @@ $('play').addEventListener('click',()=>player.paused?playVideo():player.pause())
 player.addEventListener('play',()=>{$('play').textContent='Ⅱ 暂停播放';$('play-status').textContent='正在播放 · '+byId(activeVideo).title;});
 player.addEventListener('pause',()=>{$('play').textContent='▶ 继续播放';});
 player.addEventListener('ended',()=>{$('play').textContent='↻ 再看一遍';$('play-status').textContent='本段已播放完，可切换销售环节或查看关键画面。';});
-player.addEventListener('error',()=>{$('play-status').textContent='视频未能加载。请将本 HTML 与“纷享视频”“网页素材”文件夹放在同一目录，也可点击“下载 MP4”直接打开。';});
+player.addEventListener('error',()=>{$('play-status').textContent=ONLINE?'视频暂未能加载，请稍后重试，也可查看原始页面。':'视频未能加载。请将本 HTML 与“纷享视频”“网页素材”文件夹放在同一目录，也可点击“下载 MP4”直接打开。';});
 $('search').addEventListener('input',renderLibrary);$('stage-filter').addEventListener('change',renderLibrary);$('print').addEventListener('click',()=>{if($('search').value||$('stage-filter').value!=='all'){$('search').value='';$('stage-filter').value='all';renderLibrary();}window.print();});
 DATA.stages.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name;$('stage-filter').appendChild(o);});
 renderTools();renderLibrary();selectVideo(4);
